@@ -1,0 +1,11 @@
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\bin\Debug\AppMunicipio.exe.config
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\bin\Debug\AppMunicipio.exe
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\bin\Debug\AppMunicipio.pdb
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.csproj.AssemblyReference.cache
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.csproj.SuggestedBindingRedirects.cache
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.Frm_Municipio.resources
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.Properties.Resources.resources
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.csproj.GenerateResource.cache
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.csproj.CoreCompileInputs.cache
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.exe
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.pdb
