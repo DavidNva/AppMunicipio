@@ -169,7 +169,7 @@ SET
     Telefono = @Telefono,
     RFC = @RFC,
     Edad = @Edad,
-    --@FechaNacimiento datetime,
+    FechaNacimiento = @FechaNacimiento,
     Sexo = @Sexo,
     EstadoCivil = @EstadoCivil,
     Estatura = @Estatura,

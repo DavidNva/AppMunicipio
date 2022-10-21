@@ -57,9 +57,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtEdoCivil = new System.Windows.Forms.TextBox();
-            this.txtSexo = new System.Windows.Forms.TextBox();
-            this.txtFecNacimiento = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -75,6 +72,9 @@
             this.txtSueldo = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
+            this.dtp_FecNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.cmbEdoCivil = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).BeginInit();
             this.SuspendLayout();
             // 
@@ -322,27 +322,6 @@
             this.label10.TabIndex = 48;
             this.label10.Text = "Edad:";
             // 
-            // txtEdoCivil
-            // 
-            this.txtEdoCivil.Location = new System.Drawing.Point(378, 203);
-            this.txtEdoCivil.Name = "txtEdoCivil";
-            this.txtEdoCivil.Size = new System.Drawing.Size(95, 20);
-            this.txtEdoCivil.TabIndex = 47;
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Location = new System.Drawing.Point(378, 174);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(95, 20);
-            this.txtSexo.TabIndex = 46;
-            // 
-            // txtFecNacimiento
-            // 
-            this.txtFecNacimiento.Location = new System.Drawing.Point(378, 146);
-            this.txtFecNacimiento.Name = "txtFecNacimiento";
-            this.txtFecNacimiento.Size = new System.Drawing.Size(155, 20);
-            this.txtFecNacimiento.TabIndex = 45;
-            // 
             // txtEdad
             // 
             this.txtEdad.Location = new System.Drawing.Point(378, 117);
@@ -462,11 +441,41 @@
             this.label16.TabIndex = 60;
             this.label16.Text = "CURP:";
             // 
+            // dtp_FecNacimiento
+            // 
+            this.dtp_FecNacimiento.Location = new System.Drawing.Point(378, 148);
+            this.dtp_FecNacimiento.Name = "dtp_FecNacimiento";
+            this.dtp_FecNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtp_FecNacimiento.TabIndex = 61;
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Location = new System.Drawing.Point(378, 176);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(121, 21);
+            this.cmbSexo.TabIndex = 62;
+            // 
+            // cmbEdoCivil
+            // 
+            this.cmbEdoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEdoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbEdoCivil.FormattingEnabled = true;
+            this.cmbEdoCivil.Location = new System.Drawing.Point(378, 203);
+            this.cmbEdoCivil.Name = "cmbEdoCivil";
+            this.cmbEdoCivil.Size = new System.Drawing.Size(121, 21);
+            this.cmbEdoCivil.TabIndex = 63;
+            // 
             // Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmbEdoCivil);
+            this.Controls.Add(this.cmbSexo);
+            this.Controls.Add(this.dtp_FecNacimiento);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
@@ -479,9 +488,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.txtEdoCivil);
-            this.Controls.Add(this.txtSexo);
-            this.Controls.Add(this.txtFecNacimiento);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label12);
@@ -554,9 +560,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtEdoCivil;
-        private System.Windows.Forms.TextBox txtSexo;
-        private System.Windows.Forms.TextBox txtFecNacimiento;
         private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -572,5 +575,8 @@
         private System.Windows.Forms.TextBox txtSueldo;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DateTimePicker dtp_FecNacimiento;
+        private System.Windows.Forms.ComboBox cmbSexo;
+        private System.Windows.Forms.ComboBox cmbEdoCivil;
     }
 }

@@ -19,7 +19,7 @@ namespace AppMunicipio
         SqlParameter paPersona;
         DataSet dsPersona;
         SqlDataAdapter daPersona;
-
+        
         public Persona()
         {
             InitializeComponent();
@@ -27,7 +27,14 @@ namespace AppMunicipio
 
         private void Persona_Load(object sender, EventArgs e)
         {
-
+            cmbSexo.Items.Add("M");
+            cmbSexo.Items.Add("F");
+            //---------
+            cmbEdoCivil.Items.Add("S");
+            cmbEdoCivil.Items.Add("C");
+            cmbEdoCivil.Items.Add("U");
+            cmbEdoCivil.Items.Add("V");
+            cmbEdoCivil.Items.Add("D");
         }
 
         private void btnConsultarPersona_Click(object sender, EventArgs e)
@@ -181,7 +188,7 @@ namespace AppMunicipio
                 paPersona.ParameterName = "@FechaNacimiento";
                 paPersona.SqlDbType = SqlDbType.Date;
                 //paPersona.Size = 3;
-                paPersona.Value = Convert.ToDateTime(txtFecNacimiento.Text);
+                paPersona.Value = dtp_FecNacimiento.Text;
                 paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
                 cmdPersona.Parameters.Add(paPersona);
                 
@@ -189,7 +196,7 @@ namespace AppMunicipio
                 paPersona.ParameterName = "@Sexo";
                 paPersona.SqlDbType = SqlDbType.Char;
                 paPersona.Size = 1;
-                paPersona.Value = txtSexo.Text;
+                paPersona.Value = cmbSexo.Text;
                 paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
                 cmdPersona.Parameters.Add(paPersona);
 
@@ -197,7 +204,7 @@ namespace AppMunicipio
                 paPersona.ParameterName = "@EstadoCivil";
                 paPersona.SqlDbType = SqlDbType.Char;
                 paPersona.Size = 1;
-                paPersona.Value = txtEdoCivil.Text;
+                paPersona.Value = cmbEdoCivil.Text;
                 paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
                 cmdPersona.Parameters.Add(paPersona);
 
@@ -386,7 +393,7 @@ namespace AppMunicipio
                 paPersona.ParameterName = "@FechaNacimiento";
                 paPersona.SqlDbType = SqlDbType.Date;
                 //paPersona.Size = 3;
-                paPersona.Value = Convert.ToDateTime(txtFecNacimiento.Text);
+                paPersona.Value = dtp_FecNacimiento.Text;
                 paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
                 cmdPersona.Parameters.Add(paPersona);
 
@@ -394,7 +401,7 @@ namespace AppMunicipio
                 paPersona.ParameterName = "@Sexo";
                 paPersona.SqlDbType = SqlDbType.Char;
                 paPersona.Size = 1;
-                paPersona.Value = txtSexo.Text;
+                paPersona.Value = cmbSexo.Text;
                 paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
                 cmdPersona.Parameters.Add(paPersona);
 
@@ -402,7 +409,7 @@ namespace AppMunicipio
                 paPersona.ParameterName = "@EstadoCivil";
                 paPersona.SqlDbType = SqlDbType.Char;
                 paPersona.Size = 1;
-                paPersona.Value = txtEdoCivil.Text;
+                paPersona.Value = cmbEdoCivil.Text;
                 paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
                 cmdPersona.Parameters.Add(paPersona);
 
