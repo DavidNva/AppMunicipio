@@ -11,7 +11,7 @@ namespace AppMunicipio
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        public static string cadenaMunicipio = @"Data Source=LIBERO\DAVIDSQL;Initial Catalog=MunicipioSP;Integrated Security=True";
+        public static string cadena = @"Data Source=LIBERO\DAVIDSQL;Initial Catalog=MunicipioSP;Integrated Security=True";
         
         [STAThread]
         
@@ -19,7 +19,8 @@ namespace AppMunicipio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Frm_Municipio());
+            //Application.Run(new Frm_Municipio());
+            Application.Run(new Persona());
             
         }
     }

@@ -33,7 +33,7 @@ namespace AppMunicipio
         private void btnConsultarMun_Click(object sender, EventArgs e)
         {
             cnMunicipio = new SqlConnection();
-            cnMunicipio.ConnectionString = Program.cadenaMunicipio;
+            cnMunicipio.ConnectionString = Program.cadena;
             cnMunicipio.Open();
             if(dsMunicipio == null)
             {
@@ -57,7 +57,7 @@ namespace AppMunicipio
         {
             try { 
             cnMunicipio = new SqlConnection();
-            cnMunicipio.ConnectionString = Program.cadenaMunicipio;
+            cnMunicipio.ConnectionString = Program.cadena;
             cnMunicipio.Open();
             cmdMunicipio = new SqlCommand();
             cmdMunicipio.CommandText = "sp_Insert_Municipio";
@@ -129,7 +129,7 @@ namespace AppMunicipio
             try
             {
                 cnMunicipio = new SqlConnection();
-                cnMunicipio.ConnectionString = Program.cadenaMunicipio;
+                cnMunicipio.ConnectionString = Program.cadena;
                 cnMunicipio.Open();
                 cmdMunicipio = new SqlCommand();
                 cmdMunicipio.CommandText = "sp_Update_Municipio";
@@ -200,7 +200,7 @@ namespace AppMunicipio
             try
             {
                 cnMunicipio = new SqlConnection();
-                cnMunicipio.ConnectionString = Program.cadenaMunicipio;
+                cnMunicipio.ConnectionString = Program.cadena;
                 cnMunicipio.Open();
                 cmdMunicipio = new SqlCommand();
                 cmdMunicipio.CommandText = "sp_Delete_Municipio";
