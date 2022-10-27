@@ -9,11 +9,11 @@ CREATE TABLE Municipio(
     CodPostalMun char(50)
 )
 go
--- Inserción normal 
 INSERT INTO Municipio (IDMunicipio, NombreMunicipio, Direccion,CodPostalMun)
 VALUES (1,'ZACATLAN','LUIS CABRERA NUM 20','73310');
 go
---Procedimiento para Insertar
+select * from Municipio;
+GO
 CREATE PROC sp_Insert_Municipio(
     @IDMunicipio int, 
     @NombreMunicipio char(50),
@@ -23,15 +23,12 @@ CREATE PROC sp_Insert_Municipio(
 AS 
 INSERT INTO Municipio(IDMunicipio, NombreMunicipio, Direccion,CodPostalMun)
 VALUES (@IDMunicipio, @NombreMunicipio, @Direccion,@CodPostalMun);
---Ejemplo de insercion a municipio con Procedimiento Almacenado
+
 GO
 sp_Insert_Municipio 2,'CHIGNAHUAPAN','JUAN NEPOMUCENO MENDEZ','73300';
+select * from Municipio;
+
 go
-sp_Insert_Municipio 3,'CHIGNAHUAPAN','20 DE NOVIEMBRE','73300';
-go
-sp_Insert_Municipio 4,'AHUACATLAN','5 DE MAYO','73300';
-go
---Procedimineto para actualizar municipio
 CREATE PROC sp_Update_Municipio(
     @IDMunicipio int, 
     @NombreMunicipio char(50),
@@ -46,20 +43,25 @@ SET
     Direccion=@Direccion,
     CodPostalMun = @CodPostalMun
 WHERE IDMunicipio = @IDMunicipio;
+
 go 
---Ejemplos insercion con Municipio
-sp_Update_Municipio 3,'JOPALA','JOSE CLEMENTE OROZCO','73260';
---Procedimiento para eliminar un municipio
+select * from municipio;
+go
+sp_Update_Municipio 23,'JOPALA','JOSE CLEMENTE OROZCO','73260';
+GO
+sp_Update_Municipio 23,'JOPALA','JOSE CLEMENTE',73260;
+
+GO
 CREATE PROC sp_Delete_Municipio(
 @IDMunicipio int)
 AS
 DELETE Municipio 
 WHERE IDMunicipio = @IDMunicipio;
-go
---Ejemplo eliminar Municipio
-go
-sp_Delete_Municipio 4;
-go
+
+select *  from Municipio;
+GO
+sp_Delete_Municipio 23;
+
 
 --Vivienda
 CREATE TABLE Vivienda (
@@ -73,8 +75,7 @@ CREATE TABLE Vivienda (
     EstadoVivienda char(50) not null,
     CodigoPostalVivienda char(5) not null CONSTRAINT CH_CodigoPostal_Viv CHECK(CodigoPostalVivienda like '[0-9][0-9][0-9][0-9][0-9]')
 )
-go 
---Procedimiento para insertar en vivienda
+GO--INSERTAR
 CREATE PROC sp_Insert_Vivienda(
     @IDVivienda int,
     @NumVivienda char(50),
@@ -90,14 +91,12 @@ AS
 INSERT INTO Vivienda(IDVivienda,NumVivienda,NombreCalleVivienda,DireccionVivienda,N_Int_Vivienda, N_Ext_Vivienda,ColoniaVivienda,EstadoVivienda,CodigoPostalVivienda)
 VALUES (@IDVivienda,@NumVivienda,@NombreCalleVivienda,@DireccionVivienda,@N_Int_Vivienda, @N_Ext_Vivienda,@ColoniaVivienda,@EstadoVivienda,@CodigoPostalVivienda);
 go
---Ejemplos de insercion de vivienda con el procedimineto almacenado
-sp_Insert_Vivienda 1,'5','5 OCTUBRE','BUENOS AIRES','5','S/N','EL NOGAL','EN BUEN ESTADO','73310'; 
+sp_Insert_Vivienda 1,'5','GALEANA','BUENOS AIRES','5','S/N','5 DE MAYO','PERFECTA','73310'; 
 go
-sp_Insert_Vivienda 2,'12','GALEANA','SAN PEDRO','S/N','S/N','CENTRO','PERFECTO ESTADO','73310'; 
+sp_Insert_Vivienda 2,'5','GALEANA','BUENOS AIRES','5','S/N','5 DE MAYO','PERFECTA','73310'; 
 go
-sp_Insert_Vivienda 3,'2','20 DE NOVIEMBRE','CENTRO ZACATLÁN','24','12','CENTRO','PERFECTA','73310'; 
+sp_Insert_Vivienda 3,'5','GALEANA','BUENOS AIRES','5','S/N','5 DE MAYO','PERFECTA','73310'; 
 GO
---Procedimiento para actualizar vivienda
 CREATE PROC sp_Update_Vivienda(
     @IDVivienda int,
     @NumVivienda char(50),
@@ -123,21 +122,27 @@ SET
     CodigoPostalVivienda = @CodigoPostalVivienda
 WHERE IDVivienda = @IDVivienda;
 go
---Ejemplo de actualizacion con procedimiento almacenado
-sp_Update_Vivienda 3,'78','JUAN NEPOMUCENO MENDEZ','CENTRO ZACATLÁN','89','12','CENTRO','PERFECTA','73310'; 
-go
---Procedimiento para eliminar Vivienda
+sp_Update_Vivienda 3,'5','GALEANA','NUEVA YORK','5','S/N','5 DE MAYO','PERFECTA','73310'; 
+GO-------
+SELECT * FROM Vivienda;
+GO
 CREATE PROC sp_Delete_Vivienda(
 @IDVivienda int)
 AS
 DELETE Vivienda 
 WHERE IDVivienda = @IDVivienda;
 GO
---Ejemplo para eliminacion de vivienda
-sp_Delete_Vivienda 2;
+sp_Delete_Vivienda 1;
+
 go
+SELECT *  FROM Persona;
+SELECT * FROM Municipio;
+go
+sp_Insert_Persona 1,'DAVID','NAVA','GARCIA','JOSE CLEMENTE','1','5','73310','5 DE MAYO','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
+GO
+select * from Vivienda;
 --DROP TABLE Persona;
---Tabla Persona
+go
 CREATE TABLE Persona (
     IDPersona int not null CONSTRAINT PK_Persona PRIMARY KEY,
     NombrePersona char(50) not null,
@@ -148,9 +153,12 @@ CREATE TABLE Persona (
     N_Ext char(5) null DEFAULT 'S/N',
     CodigoPostal char(5) not null CONSTRAINT CH_CodigoPostal CHECK(CodigoPostal like '[0-9][0-9][0-9][0-9][0-9]') ,
     Colonia char(30) null,
-    ID_Municipio int not null,--foreign
-    ID_Vivienda int not null,--forreign
-    ID_Persona int not null,--persona quien la encabeza
+    ID_Municipio int not null CONSTRAINT FK_ID_Municipio FOREIGN KEY(ID_Municipio) 
+    REFERENCES Municipio(IDMunicipio),--foreign
+    ID_Vivienda int not null CONSTRAINT FK_ID_Vivienda FOREIGN KEY(ID_Vivienda) 
+    REFERENCES Vivienda(IDVivienda),--forreign
+    ID_Persona int not null CONSTRAINT FK_ID_Persona FOREIGN KEY(ID_Persona) 
+    REFERENCES Persona(IDPersona),--persona quien la encabeza
     Pais char(50) not null DEFAULT 'MÉXICO',
     Telefono char(17) not null CONSTRAINT DF_TelefonoDefault DEFAULT '(000)000-0000',
     RFC char(10) not null CONSTRAINT CH_RFC CHECK(RFC like '[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9][0-9][0-9]'),
@@ -163,8 +171,14 @@ CREATE TABLE Persona (
     Sueldo money not null DEFAULT 0,
     CURP char(18) not null
 )
-go
---Procedimiento para insertar Persona
+
+/*
+CONSTRAINT FK_Municipio FOREIGN KEY(ID_Municipio) 
+    REFERENCES Municipio(IDMunicipio)
+*/
+GO
+SELECT * FROM Persona;
+GO
 CREATE PROC sp_Insert_Persona(
     @IDPersona int,
     @NombrePersona char(50),
@@ -195,17 +209,19 @@ INSERT INTO Persona( IDPersona,NombrePersona, A_Paterno, A_Materno, NombreCalle,
         Telefono, RFC, Edad, FechaNacimiento, Sexo, EstadoCivil, Estatura, Peso,Sueldo, CURP)
 VALUES ( @IDPersona,@NombrePersona, @A_Paterno, @A_Materno, @NombreCalle, @N_Int, @N_Ext, @CodigoPostal, @Colonia, @ID_Municipio,@ID_Vivienda,@ID_Persona, @Pais,
         @Telefono, @RFC, @Edad,@FechaNacimiento, @Sexo, @EstadoCivil, @Estatura,@Peso, @Sueldo, @CURP);
+    
+GO
+SELECT *  FROM Persona;
+SELECT* FROM Vivienda;
+SELECT * FROM Municipio;
 go
---Ejemplo de inserción de Personas
 sp_Insert_Persona 1,'DAVID','NAVA','GARCIA','JOSE CLEMENTE','1','5','73310','5 DE MAYO','1','3','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
 GO
 sp_Insert_Persona 2,'JUAN','NAVA','GARCIA','JOSE CLEMENTE','1','5','73310','5 DE MAYO','1','3','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
 GO
 sp_Insert_Persona 3,'PEDRO','NAVA','GARCIA','JOSE CLEMENTE','1','5','73310','5 DE MAYO','1','3','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
+
 GO
-sp_Insert_Persona 4,'PABLO','NAVA','GARCIA','JOSE CLEMENTE','1','5','73310','5 DE MAYO','1','3','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
-GO
---Procedimiento para actualizar Persona
 CREATE PROC sp_Update_Persona(
     @IDPersona int,
     @NombrePersona char(50),
@@ -258,31 +274,36 @@ SET
     Sueldo = @Sueldo,
     CURP = @CURP 
 WHERE IDPersona = @IDPersona;
+
 go
---Ejemplos de actualizacion de personas con el procedimiento almacenado
-sp_Update_Persona 3,'DIANA','NAVA','GARCIA','JOSE MARIA MORELOS','1','5','73310','20 DE NOVIEMBRE','1','2','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
-go
---Procedimiento almacenado para eliminar Persona
+sp_Update_Persona 1,'DAVID','NAVA','GARCIA','JOSE CLEMENTE','1','5','73310','5 DE MAYO','1','2','1','MÉXICO','7641857875','NAGD020401','20','01/04/2022','M','S','1.60','60','1000','NAGD0020401HPLVRV4';
+GO
+select * from Persona;
+
+GO
 CREATE PROC sp_Delete_Persona(
 @IDPersona int)
 AS
 DELETE Persona 
 WHERE IDPersona = @IDPersona;
-go
---Ejemplo Eliminar persona con Procedimiento almacenado
-sp_Delete_Persona 4;
-go
 
+select *  from Municipio;
+SELECT * FROM PERSONA;
+go
+sp_Delete_Persona 1;
+go
 --Relacion Persona Vivienda
 CREATE TABLE PerPropVivienda(
-    IDPerPropVivienda int not null Primary key,
-    ID_Vivienda int not null,
-    ID_Persona int not null,
+    IDPerPropVivienda int not null PRIMARY key,
+    ID_Vivienda int not null CONSTRAINT FK_ID_Vivienda_prePropV FOREIGN KEY(ID_Vivienda) 
+    REFERENCES Vivienda(IDVivienda),
+    ID_Persona int not null CONSTRAINT FK_ID_Persona_prePropV FOREIGN KEY(ID_Persona) 
+    REFERENCES Persona(IDPersona),
     FechaPago datetime not null,
     PrecioPredio money not null
 )
-go
---Procedimiento almacenado para insertar en perPropVivienda
+select * from PerPropVivienda;
+GO--INSERTAR
 CREATE PROC sp_Insert_perPropVivienda(
     @IDPerPropVivienda int,
     @ID_Vivienda int,
@@ -294,58 +315,9 @@ AS
 INSERT INTO PerPropVivienda(IDPerPropVivienda,ID_Vivienda,ID_Persona,FechaPago,PrecioPredio)
 VALUES (@IDPerPropVivienda,@ID_Vivienda,@ID_Persona,@FechaPago,@PrecioPredio);
 go
---Ejemplo de insercion en perPropVivienda con el procedimiento almacenado
 sp_Insert_perPropVivienda 1,2,1,'2022-10-22',20000;
-go
-sp_Insert_perPropVivienda 2,1,2,'2022-10-22',20000;
-go
---Procedimiento para actualizar perPropVivienda
-CREATE PROC sp_Update_perPropVivienda(
-    @IDPerPropVivienda int,
-    @ID_Vivienda int,
-    @ID_Persona int,
-    @FechaPago datetime,
-    @PrecioPredio money
-)
-AS 
-UPDATE PerPropVivienda
-SET
-    IDPerPropVivienda = @IDPerPropVivienda,
-    ID_Vivienda = @ID_Vivienda,
-    ID_Persona = @ID_Persona,
-    FechaPago = @FechaPago,
-    PrecioPredio = @PrecioPredio
-WHERE IDPerPropVivienda = @IDPerPropVivienda;
-go
---Ejemplo de actualizacion de un dato de la tabla perPropVivienda con procedimiento almacenado
-sp_Update_perPropVivienda 1,1,2,'2022-10-26',100000;
+
 GO
---Procedimiento almacenado para eliminar perPropVivienda
-CREATE PROC sp_Delete_perPropVivienda(
-@IDPerPropVivienda int)
-AS
-DELETE PerPropVivienda
-WHERE IDPerPropVivienda = @IDPerPropVivienda;
-go
---Ejemplo Eliminar perPropVivienda con Procedimiento almacenado
-sp_Delete_perPropVivienda 2;
-go
+SELECT * from Vivienda;
+SELECT * from Persona;
 SELECT * from PerPropVivienda;
-select * from Vivienda;
-SELECT *  FROM Persona;
-SELECT * FROM Municipio;
-
---Procedimiento para mostrar en inicio los formularios
-
-go
---vista para cargar info
-CREATE VIEW V_PrestamoCompleto with encryption
-AS
-SELECT NombrePersona,DireccionVivienda, NombreMunicipio,CodigoPostal FROM Persona 
-INNER JOIN Municipio ON Municipio.IDMunicipio = Persona.ID_Municipio 
-INNER JOIN Vivienda ON  Vivienda.IDVivienda = Persona.ID_Vivienda;
-
-go
-create procedure sp_cargar_Info
-As
-select * from V_PrestamoCompleto;

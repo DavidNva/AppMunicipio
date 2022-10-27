@@ -27,9 +27,30 @@ namespace AppMunicipio
 
         private void Frm_Municipio_Load(object sender, EventArgs e)
         {
-
+            MostrarMunicipios();
         }
+        private void MostrarMunicipios()
+        {
+            cnMunicipio = new SqlConnection();
+            cnMunicipio.ConnectionString = Program.cadena;
+            cnMunicipio.Open();
+            if (dsMunicipio == null)
+            {
+                dsMunicipio = new DataSet();
 
+            }
+            if (daMunicipio == null)
+            {
+                daMunicipio = new SqlDataAdapter("SELECT * FROM Municipio", cnMunicipio);
+                dsMunicipio.Clear();//Limpia el data set
+                daMunicipio.Fill(dsMunicipio, "Municipio");
+                dgvMunicipio.DataSource = dsMunicipio;
+                dgvMunicipio.DataMember = "Municipio";
+                dsMunicipio = null;
+                daMunicipio = null;
+                cnMunicipio.Close();
+            }
+        }
         private void btnConsultarMun_Click(object sender, EventArgs e)
         {
             cnMunicipio = new SqlConnection();
@@ -106,7 +127,7 @@ namespace AppMunicipio
             {
 
                 MessageBox.Show("Datos ingresados correctamente", "Insertar Municipio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                
+                MostrarMunicipios();
             }
             else
             {
@@ -178,7 +199,7 @@ namespace AppMunicipio
                 {
 
                     MessageBox.Show("Datos actualizados correctamente", "Actualizados Municipio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MostrarMunicipios();
                 }
                 else
                 {
@@ -223,7 +244,7 @@ namespace AppMunicipio
                 {
 
                     MessageBox.Show("El dato se eliminó correctamente", "Eliminar Municipio", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MostrarMunicipios();
                 }
                 else
                 {

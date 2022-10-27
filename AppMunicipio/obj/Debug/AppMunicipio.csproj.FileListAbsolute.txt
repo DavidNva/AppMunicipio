@@ -10,3 +10,7 @@ E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\App
 E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.exe
 E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.pdb
 E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.Persona.resources
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.Frm_Prueba.resources
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.Vivienda.resources
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.PerPropVivienda.resources
+E:\Documentos\5º Semestre Enero-Junio\Taller de Base de Datos\Competencia 4\AppMunicipio\AppMunicipio\obj\Debug\AppMunicipio.Inicio.resources

@@ -39,7 +39,6 @@
             this.txtNombrePersona = new System.Windows.Forms.TextBox();
             this.txtIDPersona = new System.Windows.Forms.TextBox();
             this.btnInsertarPersona = new System.Windows.Forms.Button();
-            this.btnConsultarPersona = new System.Windows.Forms.Button();
             this.dgvPersona = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -75,12 +74,16 @@
             this.dtp_FecNacimiento = new System.Windows.Forms.DateTimePicker();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.cmbEdoCivil = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtIDVivienda = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtID_Persona_Foreign = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizarPersona
             // 
-            this.btnActualizarPersona.Location = new System.Drawing.Point(390, 277);
+            this.btnActualizarPersona.Location = new System.Drawing.Point(390, 263);
             this.btnActualizarPersona.Name = "btnActualizarPersona";
             this.btnActualizarPersona.Size = new System.Drawing.Size(87, 23);
             this.btnActualizarPersona.TabIndex = 25;
@@ -90,7 +93,7 @@
             // 
             // btnEliminarPersona
             // 
-            this.btnEliminarPersona.Location = new System.Drawing.Point(512, 277);
+            this.btnEliminarPersona.Location = new System.Drawing.Point(512, 263);
             this.btnEliminarPersona.Name = "btnEliminarPersona";
             this.btnEliminarPersona.Size = new System.Drawing.Size(89, 23);
             this.btnEliminarPersona.TabIndex = 24;
@@ -164,7 +167,7 @@
             // 
             // btnInsertarPersona
             // 
-            this.btnInsertarPersona.Location = new System.Drawing.Point(293, 277);
+            this.btnInsertarPersona.Location = new System.Drawing.Point(293, 263);
             this.btnInsertarPersona.Name = "btnInsertarPersona";
             this.btnInsertarPersona.Size = new System.Drawing.Size(75, 23);
             this.btnInsertarPersona.TabIndex = 15;
@@ -172,22 +175,17 @@
             this.btnInsertarPersona.UseVisualStyleBackColor = true;
             this.btnInsertarPersona.Click += new System.EventHandler(this.btnInsertarPersona_Click);
             // 
-            // btnConsultarPersona
-            // 
-            this.btnConsultarPersona.Location = new System.Drawing.Point(173, 276);
-            this.btnConsultarPersona.Name = "btnConsultarPersona";
-            this.btnConsultarPersona.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultarPersona.TabIndex = 14;
-            this.btnConsultarPersona.Text = "Consultar";
-            this.btnConsultarPersona.UseVisualStyleBackColor = true;
-            this.btnConsultarPersona.Click += new System.EventHandler(this.btnConsultarPersona_Click);
-            // 
             // dgvPersona
             // 
+            this.dgvPersona.AllowUserToResizeColumns = false;
+            this.dgvPersona.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPersona.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPersona.Location = new System.Drawing.Point(12, 306);
+            this.dgvPersona.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgvPersona.Location = new System.Drawing.Point(12, 292);
             this.dgvPersona.Name = "dgvPersona";
-            this.dgvPersona.Size = new System.Drawing.Size(776, 132);
+            this.dgvPersona.Size = new System.Drawing.Size(1229, 246);
             this.dgvPersona.TabIndex = 13;
             // 
             // label1
@@ -273,7 +271,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(283, 233);
+            this.label6.Location = new System.Drawing.Point(647, 74);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 13);
             this.label6.TabIndex = 53;
@@ -281,7 +279,7 @@
             // 
             // txtEstatura
             // 
-            this.txtEstatura.Location = new System.Drawing.Point(378, 229);
+            this.txtEstatura.Location = new System.Drawing.Point(709, 71);
             this.txtEstatura.Name = "txtEstatura";
             this.txtEstatura.Size = new System.Drawing.Size(95, 20);
             this.txtEstatura.TabIndex = 52;
@@ -289,7 +287,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(283, 207);
+            this.label7.Location = new System.Drawing.Point(647, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 51;
@@ -298,7 +296,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(285, 179);
+            this.label8.Location = new System.Drawing.Point(648, 20);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 50;
@@ -307,7 +305,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(282, 150);
+            this.label9.Location = new System.Drawing.Point(282, 200);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 13);
             this.label9.TabIndex = 49;
@@ -316,7 +314,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(283, 119);
+            this.label10.Location = new System.Drawing.Point(283, 169);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 48;
@@ -324,7 +322,7 @@
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(378, 117);
+            this.txtEdad.Location = new System.Drawing.Point(378, 167);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.Size = new System.Drawing.Size(95, 20);
             this.txtEdad.TabIndex = 44;
@@ -332,7 +330,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(283, 93);
+            this.label11.Location = new System.Drawing.Point(283, 143);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 13);
             this.label11.TabIndex = 43;
@@ -341,7 +339,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(283, 67);
+            this.label12.Location = new System.Drawing.Point(283, 117);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(52, 13);
             this.label12.TabIndex = 42;
@@ -350,7 +348,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(283, 41);
+            this.label13.Location = new System.Drawing.Point(283, 91);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(30, 13);
             this.label13.TabIndex = 41;
@@ -367,21 +365,21 @@
             // 
             // txtRFC
             // 
-            this.txtRFC.Location = new System.Drawing.Point(378, 90);
+            this.txtRFC.Location = new System.Drawing.Point(378, 140);
             this.txtRFC.Name = "txtRFC";
             this.txtRFC.Size = new System.Drawing.Size(155, 20);
             this.txtRFC.TabIndex = 39;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(378, 64);
+            this.txtTelefono.Location = new System.Drawing.Point(378, 114);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(155, 20);
             this.txtTelefono.TabIndex = 38;
             // 
             // txtPais
             // 
-            this.txtPais.Location = new System.Drawing.Point(378, 38);
+            this.txtPais.Location = new System.Drawing.Point(378, 88);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(155, 20);
             this.txtPais.TabIndex = 37;
@@ -396,7 +394,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(549, 43);
+            this.label17.Location = new System.Drawing.Point(648, 123);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(43, 13);
             this.label17.TabIndex = 59;
@@ -405,7 +403,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(549, 16);
+            this.label18.Location = new System.Drawing.Point(648, 96);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(34, 13);
             this.label18.TabIndex = 58;
@@ -413,21 +411,21 @@
             // 
             // txtCURP
             // 
-            this.txtCURP.Location = new System.Drawing.Point(592, 67);
+            this.txtCURP.Location = new System.Drawing.Point(709, 147);
             this.txtCURP.Name = "txtCURP";
             this.txtCURP.Size = new System.Drawing.Size(184, 20);
             this.txtCURP.TabIndex = 56;
             // 
             // txtSueldo
             // 
-            this.txtSueldo.Location = new System.Drawing.Point(592, 43);
+            this.txtSueldo.Location = new System.Drawing.Point(709, 123);
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(184, 20);
             this.txtSueldo.TabIndex = 55;
             // 
             // txtPeso
             // 
-            this.txtPeso.Location = new System.Drawing.Point(592, 16);
+            this.txtPeso.Location = new System.Drawing.Point(709, 97);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(184, 20);
             this.txtPeso.TabIndex = 54;
@@ -435,7 +433,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(549, 69);
+            this.label16.Location = new System.Drawing.Point(648, 149);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(40, 13);
             this.label16.TabIndex = 60;
@@ -443,7 +441,7 @@
             // 
             // dtp_FecNacimiento
             // 
-            this.dtp_FecNacimiento.Location = new System.Drawing.Point(378, 148);
+            this.dtp_FecNacimiento.Location = new System.Drawing.Point(378, 198);
             this.dtp_FecNacimiento.Name = "dtp_FecNacimiento";
             this.dtp_FecNacimiento.Size = new System.Drawing.Size(200, 20);
             this.dtp_FecNacimiento.TabIndex = 61;
@@ -453,7 +451,7 @@
             this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(378, 176);
+            this.cmbSexo.Location = new System.Drawing.Point(709, 18);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(121, 21);
             this.cmbSexo.TabIndex = 62;
@@ -463,16 +461,52 @@
             this.cmbEdoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEdoCivil.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbEdoCivil.FormattingEnabled = true;
-            this.cmbEdoCivil.Location = new System.Drawing.Point(378, 203);
+            this.cmbEdoCivil.Location = new System.Drawing.Point(709, 45);
             this.cmbEdoCivil.Name = "cmbEdoCivil";
             this.cmbEdoCivil.Size = new System.Drawing.Size(121, 21);
             this.cmbEdoCivil.TabIndex = 63;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(283, 40);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 13);
+            this.label15.TabIndex = 65;
+            this.label15.Text = "Clave Vivienda:";
+            // 
+            // txtIDVivienda
+            // 
+            this.txtIDVivienda.Location = new System.Drawing.Point(378, 38);
+            this.txtIDVivienda.Name = "txtIDVivienda";
+            this.txtIDVivienda.Size = new System.Drawing.Size(95, 20);
+            this.txtIDVivienda.TabIndex = 64;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(283, 66);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(79, 13);
+            this.label19.TabIndex = 67;
+            this.label19.Text = "Clave Persona:";
+            // 
+            // txtID_Persona_Foreign
+            // 
+            this.txtID_Persona_Foreign.Location = new System.Drawing.Point(378, 64);
+            this.txtID_Persona_Foreign.Name = "txtID_Persona_Foreign";
+            this.txtID_Persona_Foreign.Size = new System.Drawing.Size(95, 20);
+            this.txtID_Persona_Foreign.TabIndex = 66;
             // 
             // Persona
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1253, 550);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.txtID_Persona_Foreign);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.txtIDVivienda);
             this.Controls.Add(this.cmbEdoCivil);
             this.Controls.Add(this.cmbSexo);
             this.Controls.Add(this.dtp_FecNacimiento);
@@ -518,9 +552,10 @@
             this.Controls.Add(this.txtNombrePersona);
             this.Controls.Add(this.txtIDPersona);
             this.Controls.Add(this.btnInsertarPersona);
-            this.Controls.Add(this.btnConsultarPersona);
             this.Controls.Add(this.dgvPersona);
+            this.MaximizeBox = false;
             this.Name = "Persona";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Persona";
             this.Load += new System.EventHandler(this.Persona_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersona)).EndInit();
@@ -542,7 +577,6 @@
         private System.Windows.Forms.TextBox txtNombrePersona;
         private System.Windows.Forms.TextBox txtIDPersona;
         private System.Windows.Forms.Button btnInsertarPersona;
-        private System.Windows.Forms.Button btnConsultarPersona;
         private System.Windows.Forms.DataGridView dgvPersona;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -578,5 +612,9 @@
         private System.Windows.Forms.DateTimePicker dtp_FecNacimiento;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.ComboBox cmbEdoCivil;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtIDVivienda;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox txtID_Persona_Foreign;
     }
 }

@@ -46,11 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Municipio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Municipio.Designer.cs">
+      <DependentUpon>Municipio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Prueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Prueba.Designer.cs">
+      <DependentUpon>Frm_Prueba.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerPropVivienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerPropVivienda.Designer.cs">
+      <DependentUpon>PerPropVivienda.cs</DependentUpon>
     </Compile>
     <Compile Include="Persona.cs">
       <SubType>Form</SubType>
@@ -60,8 +78,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Vivienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vivienda.Designer.cs">
+      <DependentUpon>Vivienda.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Municipio.resx">
+      <DependentUpon>Municipio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Prueba.resx">
+      <DependentUpon>Frm_Prueba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PerPropVivienda.resx">
+      <DependentUpon>PerPropVivienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Persona.resx">
       <DependentUpon>Persona.cs</DependentUpon>
@@ -75,6 +108,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vivienda.resx">
+      <DependentUpon>Vivienda.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

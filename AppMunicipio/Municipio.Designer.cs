@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvMunicipio = new System.Windows.Forms.DataGridView();
-            this.btnConsultarMun = new System.Windows.Forms.Button();
             this.btnInsertarMun = new System.Windows.Forms.Button();
             this.txtIDMunicipio = new System.Windows.Forms.TextBox();
             this.txtNombreMunicipio = new System.Windows.Forms.TextBox();
@@ -47,24 +46,14 @@
             // dgvMunicipio
             // 
             this.dgvMunicipio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMunicipio.Location = new System.Drawing.Point(46, 224);
+            this.dgvMunicipio.Location = new System.Drawing.Point(20, 223);
             this.dgvMunicipio.Name = "dgvMunicipio";
-            this.dgvMunicipio.Size = new System.Drawing.Size(467, 150);
+            this.dgvMunicipio.Size = new System.Drawing.Size(462, 150);
             this.dgvMunicipio.TabIndex = 0;
-            // 
-            // btnConsultarMun
-            // 
-            this.btnConsultarMun.Location = new System.Drawing.Point(63, 154);
-            this.btnConsultarMun.Name = "btnConsultarMun";
-            this.btnConsultarMun.Size = new System.Drawing.Size(75, 23);
-            this.btnConsultarMun.TabIndex = 1;
-            this.btnConsultarMun.Text = "Consultar";
-            this.btnConsultarMun.UseVisualStyleBackColor = true;
-            this.btnConsultarMun.Click += new System.EventHandler(this.btnConsultarMun_Click);
             // 
             // btnInsertarMun
             // 
-            this.btnInsertarMun.Location = new System.Drawing.Point(178, 154);
+            this.btnInsertarMun.Location = new System.Drawing.Point(115, 169);
             this.btnInsertarMun.Name = "btnInsertarMun";
             this.btnInsertarMun.Size = new System.Drawing.Size(75, 23);
             this.btnInsertarMun.TabIndex = 2;
@@ -74,28 +63,28 @@
             // 
             // txtIDMunicipio
             // 
-            this.txtIDMunicipio.Location = new System.Drawing.Point(178, 16);
+            this.txtIDMunicipio.Location = new System.Drawing.Point(115, 15);
             this.txtIDMunicipio.Name = "txtIDMunicipio";
             this.txtIDMunicipio.Size = new System.Drawing.Size(335, 20);
             this.txtIDMunicipio.TabIndex = 3;
             // 
             // txtNombreMunicipio
             // 
-            this.txtNombreMunicipio.Location = new System.Drawing.Point(178, 50);
+            this.txtNombreMunicipio.Location = new System.Drawing.Point(115, 49);
             this.txtNombreMunicipio.Name = "txtNombreMunicipio";
             this.txtNombreMunicipio.Size = new System.Drawing.Size(335, 20);
             this.txtNombreMunicipio.TabIndex = 4;
             // 
             // txtCodigoPostal
             // 
-            this.txtCodigoPostal.Location = new System.Drawing.Point(178, 116);
+            this.txtCodigoPostal.Location = new System.Drawing.Point(115, 115);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(335, 20);
             this.txtCodigoPostal.TabIndex = 6;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(178, 79);
+            this.txtDireccion.Location = new System.Drawing.Point(115, 78);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(335, 20);
             this.txtDireccion.TabIndex = 5;
@@ -103,7 +92,7 @@
             // lblIDMunicipio
             // 
             this.lblIDMunicipio.AutoSize = true;
-            this.lblIDMunicipio.Location = new System.Drawing.Point(43, 22);
+            this.lblIDMunicipio.Location = new System.Drawing.Point(17, 21);
             this.lblIDMunicipio.Name = "lblIDMunicipio";
             this.lblIDMunicipio.Size = new System.Drawing.Size(64, 13);
             this.lblIDMunicipio.TabIndex = 7;
@@ -112,7 +101,7 @@
             // lblNombreMunicipio
             // 
             this.lblNombreMunicipio.AutoSize = true;
-            this.lblNombreMunicipio.Location = new System.Drawing.Point(43, 57);
+            this.lblNombreMunicipio.Location = new System.Drawing.Point(17, 56);
             this.lblNombreMunicipio.Name = "lblNombreMunicipio";
             this.lblNombreMunicipio.Size = new System.Drawing.Size(95, 13);
             this.lblNombreMunicipio.TabIndex = 8;
@@ -121,7 +110,7 @@
             // lblDireccionMun
             // 
             this.lblDireccionMun.AutoSize = true;
-            this.lblDireccionMun.Location = new System.Drawing.Point(43, 86);
+            this.lblDireccionMun.Location = new System.Drawing.Point(17, 85);
             this.lblDireccionMun.Name = "lblDireccionMun";
             this.lblDireccionMun.Size = new System.Drawing.Size(55, 13);
             this.lblDireccionMun.TabIndex = 9;
@@ -130,15 +119,15 @@
             // lblCodigoPostalMun
             // 
             this.lblCodigoPostalMun.AutoSize = true;
-            this.lblCodigoPostalMun.Location = new System.Drawing.Point(43, 119);
+            this.lblCodigoPostalMun.Location = new System.Drawing.Point(17, 118);
             this.lblCodigoPostalMun.Name = "lblCodigoPostalMun";
-            this.lblCodigoPostalMun.Size = new System.Drawing.Size(78, 13);
+            this.lblCodigoPostalMun.Size = new System.Drawing.Size(72, 13);
             this.lblCodigoPostalMun.TabIndex = 10;
-            this.lblCodigoPostalMun.Text = "CódigoPostal;>";
+            this.lblCodigoPostalMun.Text = "CódigoPostal:";
             // 
             // btnEliminarMun
             // 
-            this.btnEliminarMun.Location = new System.Drawing.Point(424, 154);
+            this.btnEliminarMun.Location = new System.Drawing.Point(361, 169);
             this.btnEliminarMun.Name = "btnEliminarMun";
             this.btnEliminarMun.Size = new System.Drawing.Size(89, 23);
             this.btnEliminarMun.TabIndex = 11;
@@ -148,7 +137,7 @@
             // 
             // btnActualizarMun
             // 
-            this.btnActualizarMun.Location = new System.Drawing.Point(287, 154);
+            this.btnActualizarMun.Location = new System.Drawing.Point(224, 169);
             this.btnActualizarMun.Name = "btnActualizarMun";
             this.btnActualizarMun.Size = new System.Drawing.Size(87, 23);
             this.btnActualizarMun.TabIndex = 12;
@@ -160,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 442);
+            this.ClientSize = new System.Drawing.Size(501, 382);
             this.Controls.Add(this.btnActualizarMun);
             this.Controls.Add(this.btnEliminarMun);
             this.Controls.Add(this.lblCodigoPostalMun);
@@ -172,9 +161,10 @@
             this.Controls.Add(this.txtNombreMunicipio);
             this.Controls.Add(this.txtIDMunicipio);
             this.Controls.Add(this.btnInsertarMun);
-            this.Controls.Add(this.btnConsultarMun);
             this.Controls.Add(this.dgvMunicipio);
+            this.MaximizeBox = false;
             this.Name = "Frm_Municipio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Municipios";
             this.Load += new System.EventHandler(this.Frm_Municipio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMunicipio)).EndInit();
@@ -186,7 +176,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvMunicipio;
-        private System.Windows.Forms.Button btnConsultarMun;
         private System.Windows.Forms.Button btnInsertarMun;
         private System.Windows.Forms.TextBox txtIDMunicipio;
         private System.Windows.Forms.TextBox txtNombreMunicipio;

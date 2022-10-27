@@ -20,8 +20,12 @@ namespace AppMunicipio
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Frm_Municipio());
-            Application.Run(new Persona());
-            
+            //Application.Run(new Persona());
+            //Application.Run(new Frm_Prueba());
+            //Application.Run(new Vivienda());
+            //Application.Run(new PerPropVivienda());
+            Application.Run(new Inicio());
+
         }
     }
 }

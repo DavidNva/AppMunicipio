@@ -27,6 +27,7 @@ namespace AppMunicipio
 
         private void Persona_Load(object sender, EventArgs e)
         {
+            MostrarPersonas();
             cmbSexo.Items.Add("M");
             cmbSexo.Items.Add("F");
             //---------
@@ -41,6 +42,29 @@ namespace AppMunicipio
         {
             cnPersona = new SqlConnection();
             cnPersona.ConnectionString = Program.cadena; 
+            cnPersona.Open();
+            if (dsPersona == null)
+            {
+                dsPersona = new DataSet();
+
+            }
+            if (daPersona == null)
+            {
+                daPersona = new SqlDataAdapter("SELECT * FROM Persona", cnPersona);
+                dsPersona.Clear();//Limpia el data set
+                daPersona.Fill(dsPersona, "Persona");
+                dgvPersona.DataSource = dsPersona;
+                dgvPersona.DataMember = "Persona";
+                dsPersona = null;
+                daPersona = null;
+                cnPersona.Close();
+            }
+        }
+        
+        private void MostrarPersonas()
+        {
+            cnPersona = new SqlConnection();
+            cnPersona.ConnectionString = Program.cadena;
             cnPersona.Open();
             if (dsPersona == null)
             {
@@ -153,6 +177,22 @@ namespace AppMunicipio
                 cmdPersona.Parameters.Add(paPersona);
 
                 paPersona = new SqlParameter();
+                paPersona.ParameterName = "@ID_Vivienda";
+                paPersona.SqlDbType = SqlDbType.Int;
+                paPersona.Size = 4;
+                paPersona.Value = Convert.ToInt32(txtIDVivienda.Text);
+                paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
+                cmdPersona.Parameters.Add(paPersona);
+
+                paPersona = new SqlParameter();
+                paPersona.ParameterName = "@ID_Persona";
+                paPersona.SqlDbType = SqlDbType.Int;
+                paPersona.Size = 4;
+                paPersona.Value = Convert.ToInt32(txtID_Persona_Foreign.Text);
+                paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
+                cmdPersona.Parameters.Add(paPersona);
+
+                paPersona = new SqlParameter();
                 paPersona.ParameterName = "@Pais";
                 paPersona.SqlDbType = SqlDbType.Char;
                 paPersona.Size = 50;
@@ -248,6 +288,7 @@ namespace AppMunicipio
                 {
 
                     MessageBox.Show("Datos ingresados correctamente", "Insertar Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MostrarPersonas();
 
                 }
                 else
@@ -358,6 +399,22 @@ namespace AppMunicipio
                 cmdPersona.Parameters.Add(paPersona);
 
                 paPersona = new SqlParameter();
+                paPersona.ParameterName = "@ID_Vivienda";
+                paPersona.SqlDbType = SqlDbType.Int;
+                paPersona.Size = 4;
+                paPersona.Value = Convert.ToInt32(txtIDVivienda.Text);
+                paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
+                cmdPersona.Parameters.Add(paPersona);
+
+                paPersona = new SqlParameter();
+                paPersona.ParameterName = "@ID_Persona";
+                paPersona.SqlDbType = SqlDbType.Int;
+                paPersona.Size = 4;
+                paPersona.Value = Convert.ToInt32(txtID_Persona_Foreign.Text);
+                paPersona.Direction = ParameterDirection.Input;//Porque es de dato de entrada
+                cmdPersona.Parameters.Add(paPersona);
+
+                paPersona = new SqlParameter();
                 paPersona.ParameterName = "@Pais";
                 paPersona.SqlDbType = SqlDbType.Char;
                 paPersona.Size = 50;
@@ -453,7 +510,7 @@ namespace AppMunicipio
                 {
 
                     MessageBox.Show("Datos actualizados correctamente", "Actualizar Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MostrarPersonas();
                 }
                 else
                 {
@@ -499,7 +556,7 @@ namespace AppMunicipio
                 {
 
                     MessageBox.Show("El dato se eliminó correctamente", "Eliminar Persona", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                    MostrarPersonas();
                 }
                 else
                 {
